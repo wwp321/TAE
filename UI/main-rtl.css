@@ -1,0 +1,67 @@
+/* Extra rules for RTL. Only injected when language code
+   is RTL. See i18n._rtlLanguages for language whitelist. */
+::-webkit-input-placeholder,
+.popup-caption.left,
+.popup button,
+.popup-input span,
+#security-info-popup .popup-description,
+#security-info-popup #security-info-url,
+#security-more-info,
+.clear_history span,
+.tab span,
+.new_tab span,
+.close_tab span,
+.bookmark span,
+.add_bookmark span,
+.edit_bookmarks span,
+.done_bookmarks span,
+.history_item span,
+.speed-dial-entry,
+.edit_speed_dial,
+.add_speed_dial {
+  text-align: right;
+  direction: rtl;
+}
+.popup,
+.speeddials,
+#sections,
+#elements,
+#navigation {
+  direction: rtl;
+}
+.speeddials ul li {
+  float: right;
+}
+#elements li span {
+  text-overflow: clip;
+}
+#url {
+  padding: 0 55px 0 20px;
+}
+.popup .icon:before {
+  margin: -3px -10px -1px 5px;
+}
+.popup .button-right-arrow:after {
+  margin: -29px 0 0 -10px;
+  -webkit-transform: scaleX(-1);
+  left: 10px;
+  right: auto;
+}
+.popup-input span {
+  border-right: none;
+  border-left: 1px solid #ccc;
+}
+.popup-input input {
+  padding: 10px 32% 10px 10px;
+}
+#security-info-popup #security-info-url,
+#security-info-popup .popup-description {
+  margin-right: 53px;
+  margin-left: 16px;
+}
+#security-more-info > * {
+  float: right;
+}
+#security-more-info dt {
+  clear: right;
+}

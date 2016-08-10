@@ -1,0 +1,217 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+  </head>
+  <body>
+    <div class="background-dummy"></div>
+    
+    <main id="speeddial" class="background">
+    	<img id="hisense_logo" src="images/hisense_logo.gif"/>
+      <div id="speeddial-header">
+        <div class="fakeinput"></div>
+      </div>
+      <div id="speeddial-caption" aria-live="assertive"></div>
+      <div class="speeddials-anim-wrapper">
+        <div class="speeddials"></div>
+      </div>
+      <div id="speeddial-footer" data-translation="Edit mode"></div>
+    </main>
+    <section class="header">
+      <div id="sections" class="line">
+        <div id="sections_buttons" role="tablist">
+          <button class="history" id="button-history-section" tabindex="1" role="tab" data-translation="History"></button>
+          <!--<button class="tabs" id="button-tabs-section" tabindex="1" role="tab" data-translation="Tabs"></button>-->
+          <button class="bookmarks" id="button-bookmarks-section" tabindex="1" role="tab" data-translation="Bookmarks"></button>
+        </div>
+        <div id="sections_caption" aria-live="assertive"></div>
+      </div>
+      <div id="elements" class="line wrap"></div>
+      <div id="hidden-elements">
+        <ul id="history-elements" role="tabpanel" aria-labelledby="button-history-section"></ul>
+        <ul id="tabs-elements" role="tabpanel" aria-labelledby="button-tabs-section"></ul>
+        <ul id="bookmarks-elements" role="tabpanel" aria-labelledby="button-bookmarks-section"></ul>
+      </div>
+      <nav id="navigation" class="line">
+        <button id="back" tabindex="1" class="disabled" data-translation="Back"></button>
+        <button id="forward" tabindex="1" class="disabled" data-translation="Forward"></button>
+        <button id="reloadStop" tabindex="1" data-translation="Reload"></button>
+        <button id="openHome" tabindex="1" data-translation="Home"></button>
+        <span id="security-icon"></span>
+        <input type="url" id="url" tabindex="1" class="focus" data-translation="Search or enter address" maxlength="2084">
+        <span id="private-icon"></span>
+        <button id="open-bookmarks" tabindex="1" data-translation="Bookmarks"></button>
+        <button id="open-speeddial" tabindex="1" data-translation="Speed Dial"></button>
+        <button id="opera" tabindex="1" aria-haspopup="true" data-translation="Settings"></button>
+      </nav>
+      <div id="progress"></div>
+    </section>
+    <section class="popups">
+      <div id="options-popup" class="popup centered" role="dialog"><div>
+        <!--<button id="button-close-tab" class="hide icon popup-close-all" tabindex="0" data-translation="Close Current Tab"></button>-->
+        <!--<button id="button-open-in-new-tab" class="hide icon popup-close-all" tabindex="1" data-translation="Open Link in New Tab"></button>-->
+        <!--<button id="button-add-to-speed-dial" class="icon" data-default-focus="true" tabindex="2" data-translation="Add to Speed Dial"></button>-->
+        <!--<button id="button-add-to-bookmarks" class="icon" tabindex="3" data-translation="Add to Bookmarks"></button>-->
+        <!--<button id="button-page-security" class="icon" tabindex="4" data-translation="Page Security"></button>-->
+        <!--<hr>-->
+        <!--<button id="button-new-private-tab" class="icon popup-close-all" data-default-focus="true" tabindex="5" data-translation="New Private Tab"></button>-->
+        <button id="button-settings" class="icon button-right-arrow" tabindex="6" data-translation="Settings" aria-haspopup="true"></button>
+        <button id="button-help" class="icon button-right-arrow" tabindex="7" data-translation="Help" aria-haspopup="true"></button>
+        <!--<button id="button-exit" class="icon" tabindex="8" data-translation="Exit Opera TV Browser"></button>-->
+      </div></div>
+      <div id="security-info-popup" class="popup centered" role="dialog" aria-labelledby="security-info-popup-caption"><div>
+        <h2 class="popup-caption left icon" id="security-info-popup-caption" data-translation="Security Information"></h2>
+        <p id="security-info-url" class="popup-description"></p>
+        <p id="security-info-description-secure" class="popup-description secure" data-translation="This connection is secure."></p>
+        <p id="security-info-description-non-secure" class="popup-description non-secure" data-translation="This connection is NOT secure."></p>
+        <p id="security-info-description-expired" class="popup-description expired" data-translation="This connection certificate is untrusted!"></p>
+        <p id="security-info-description-mixed" class="popup-description mixed" data-translation="This connection has mixed content."></p>
+        <dl id="security-more-info">
+          <dt data-translation="Certificate"></dt>
+          <dd id="security-certificate"></dd>
+          <dt data-translation="Connection"></dt>
+          <dd id="security-connection"></dd>
+        </dl>
+        <button class="button-ok popup-close" data-default-focus="true" tabindex="0" data-translation="OK"></button>
+      </div></div>
+      <div id="settings-popup" class="popup centered left-button-can-close" role="dialog" aria-labelledby="settings-popup-caption"><div>
+        <h2 class="popup-caption left icon" id="settings-popup-caption" data-translation="Settings"></h2>
+        <button id="button-zoom" data-default-focus="true" tabindex="0" data-translation="Zoom"></button>
+        <button id="button-textsize" tabindex="1" data-translation="Text Size"></button>
+        <button id="button-accessibility" tabindex="2"><span class="button-label" data-translation="Accessibility Mode"></span> <span class="button-state" data-translation="Off"></span></button>
+        <button id="button-sticky-menu" tabindex="3"><span class="button-label" data-translation="Always Show Menu Bar"></span> <span class="button-state" data-translation="Off"></span></button>
+        <button id="button-clear-history" tabindex="4" data-translation="Clear History"></button>
+      </div></div>
+      <div id="zoom-popup" class="popup centered" role="dialog" aria-labelledby="zoom-slider-label"><div>
+        <label for="zoom-slider" class="popup-caption" id="zoom-slider-label" data-translation="Zoom 100%" aria-live="assertive"></label>
+        <datalist id="zoom-ranges">
+          <option value="1" data-value="50"></option>
+          <option value="2" data-value="75"></option>
+          <option value="3" data-value="100"></option>
+          <option value="4" data-value="150"></option>
+          <option value="5" data-value="200"></option>
+          <option value="6" data-value="300"></option>
+        </datalist>
+        <input class="popup-slider" id="zoom-slider" type="range" min="1" max="6" step="1" value="3" list="zoom-ranges" tabindex="0" aria-controls="zoom-slider-label">
+        <button class="button-ok popup-close-all" data-default-focus="true" tabindex="1" data-translation="OK"></button>
+        <button class="button-cancel popup-close" tabindex="1" data-translation="Cancel"></button>
+      </div></div>
+      <div id="textsize-popup" class="popup centered" role="dialog" aria-labelledby="textsize-slider-label"><div>
+        <label for="textsize-slider" class="popup-caption" id="textsize-slider-label" data-translation="Text Size" aria-live="assertive"></label>
+        <datalist id="textsize-ranges">
+          <option value="1" data-value="Normal"></option>
+          <option value="1.5" data-value="Large"></option>
+        </datalist>
+        <input class="popup-slider" id="textsize-slider" type="range" min="1" max="1.5" step="0.5" value="1" list="textsize-ranges" tabindex="0" aria-controls="textsize-slider-label">
+        <button class="button-ok popup-close-all" data-default-focus="true" tabindex="1" data-translation="OK"></button>
+        <button class="button-cancel popup-close" tabindex="1" data-translation="Cancel"></button>
+      </div></div>
+      <div id="add-to-bookmark-popup" class="popup centered" role="dialog" aria-labelledby="add-to-bookmark-popup-caption"><div>
+        <h2 class="popup-caption" id="add-to-bookmark-popup-caption" data-translation="Add Page to Bookmarks"></h2>
+        <div class="popup-input"><label for="add-to-bookmark-title" data-translation="name"></label><input tabindex="0" id="add-to-bookmark-title" maxlength="42"></div>
+        <div class="popup-input"><label for="add-to-bookmark-address" data-translation="address"></label><input type="url" tabindex="1" id="add-to-bookmark-address" maxlength="512"></div>
+        <button class="button-ok popup-close-all" data-default-focus="true" tabindex="2" data-translation="OK"></button>
+        <button class="button-cancel popup-close" tabindex="2" data-translation="Cancel"></button>
+      </div></div>
+      <div id="exit-popup" class="popup centered" role="dialog" aria-labelledby="exit-popup-caption" aria-describedby="exit-popup-description"><div>
+        <h2 class="popup-caption" id="exit-popup-caption" data-translation="Exit"></h2>
+        <p class="popup-description" id="exit-popup-description" data-translation="Close Opera TV Browser?"></p>
+        <button class="button-ok" data-default-focus="true" tabindex="0" data-translation="OK"></button>
+        <button class="button-cancel popup-close" tabindex="0" data-translation="Cancel"></button>
+      </div></div>
+      <div id="clear-history-popup" class="popup centered" role="dialog" aria-labelledby="clear-history-popup-caption" aria-describedby="clear-history-popup-description"><div>
+        <h2 class="popup-caption" id="clear-history-popup-caption" data-translation="Clear History"></h2>
+        <p class="popup-description" id="clear-history-popup-description" data-translation="Do you want to clear history?"></p>
+        <button class="button-ok popup-close-all" data-default-focus="true" tabindex="0" data-translation="OK"></button>
+        <button class="button-cancel popup-close" tabindex="0" data-translation="Cancel"></button>
+      </div></div>
+      <div id="manage-bookmark-popup" class="popup centered" role="dialog"><div>
+        <button class="button-move popup-close" data-default-focus="true" tabindex="0" data-translation="Move"></button>
+        <button class="button-delete popup-close" tabindex="1" data-translation="Delete"></button>
+      </div></div>
+      <div id="bookmark-delete-popup" class="popup centered" role="dialog" aria-labelledby="bookmark-delete-popup-caption"><div>
+        <h2 class="popup-caption" id="bookmark-delete-popup-caption" data-translation="Delete Bookmark?"></h2>
+        <button class="button-ok popup-close-all" data-default-focus="true" tabindex="0" data-translation="OK"></button>
+        <button class="button-cancel popup-close" tabindex="0" data-translation="Cancel"></button>
+      </div></div>
+      <div id="add-to-speed-dial-popup" class="popup centered" role="dialog" aria-labelledby="add-to-speed-dial-popup-caption"><div>
+        <h2 class="popup-caption" id="add-to-speed-dial-popup-caption" data-translation="Add Page to Speed Dial"></h2>
+        <div class="popup-input"><label for="add-to-speed-dial-title" data-translation="name"></label><input tabindex="0" id="add-to-speed-dial-title" maxlength="42"></div>
+        <div class="popup-input"><label for="add-to-speed-dial-address" data-translation="address"></label><input type="url" tabindex="1" id="add-to-speed-dial-address" maxlength="512"></div>
+        <button class="button-ok popup-close-all" data-default-focus="true" tabindex="2" data-translation="OK"></button>
+        <button class="button-cancel popup-close" tabindex="2" data-translation="Cancel"></button>
+      </div></div>
+      <div id="edit-speed-dial-popup" class="popup centered" role="dialog" aria-labelledby="edit-speed-dial-popup-caption"><div>
+        <h2 class="popup-caption" id="edit-speed-dial-popup-caption" data-translation="Edit Speed Dial"></h2>
+        <div class="popup-input"><label for="edit-speed-dial-title" data-translation="name"></label><input tabindex="0" id="edit-speed-dial-title" maxlength="42"></div>
+        <div class="popup-input"><label for="edit-speed-dial-address" data-translation="address"></label><input type="url" tabindex="1" id="edit-speed-dial-address" maxlength="512"></div>
+        <button class="button-ok popup-close-all" data-default-focus="true" tabindex="2" data-translation="OK"></button>
+        <button class="button-cancel popup-close" tabindex="2" data-translation="Cancel"></button>
+      </div></div>
+      <div id="manage-speed-dial-popup" class="popup centered" role="dialog"><div>
+        <button class="button-move popup-close" tabindex="0" data-translation="Move" data-default-focus="true"></button>
+        <button class="button-edit popup-close" tabindex="1" data-translation="Edit"></button>
+        <button class="button-delete popup-close" tabindex="2" data-translation="Delete"></button>
+      </div></div>
+      <div id="delete-speed-dial-popup" class="popup centered" role="dialog" aria-labelledby="delete-speed-dial-popup-caption"><div>
+        <h2 class="popup-caption" id="delete-speed-dial-popup-caption" data-translation="Delete Speed Dial Entry?"></h2>
+        <button class="button-ok popup-close-all" data-default-focus="true" tabindex="0" data-translation="OK"></button>
+        <button class="button-cancel popup-close" tabindex="0" data-translation="Cancel"></button>
+      </div></div>
+      <div id="help-popup" class="popup centered left-button-can-close" role="dialog" aria-labelledby="help-popup-caption"><div>
+        <h2 class="popup-caption left icon" id="help-popup-caption" data-translation="Help"></h2>
+        <button id="button-about" data-default-focus="true" tabindex="0" data-translation="About"></button>
+        <button id="button-opera-help" tabindex="1" data-translation="Opera Help"></button>
+      </div></div>
+      <div id="about-popup" class="popup centered" role="dialog" aria-labelledby="about-popup-caption"><div>
+        <h2 class="popup-caption left icon" id="about-popup-caption" data-translation="About"></h2>
+        <!--<div class="scrollable-content" role="document"></div>-->
+        <div id="">
+        	<img src="images/hisense_logo.gif"/>
+        	<ul>
+        		<li>Hisense Tv Apps Emulator</li>
+        		<li>Copyright(c) 1995-2016</li>
+        		<li>Hisense Software QingDao</li>
+        		<li>All Rights Reserved</li>
+        	</ul>
+        </div>
+        <hr>
+      </div></div>
+      <div id="opera-help-popup" class="popup centered" role="dialog" aria-labelledby="opera-help-popup-caption"><div>
+        <h2 class="popup-caption left icon" id="opera-help-popup-caption" data-translation="Opera Help"></h2>
+        <div class="scrollable-content" role="document"></div>
+      </div></div>
+      <div id="alert-popup" class="popup centered only-button-can-close" role="alert" aria-describedby="alert-popup-description"><div>
+        <p class="popup-description" id="alert-popup-description"></p>
+        <button class="button-ok" data-default-focus="true" tabindex="0" data-translation="Close"></button>
+      </div></div>
+      <div id="prompt-popup" class="popup centered only-button-can-close" role="alertdialog"><div>
+        <label for="prompt-input" class="popup-description" id="prompt-popup-description"></label>
+        <input data-default-focus="true" tabindex="0" id="prompt-input" maxlength="512">
+        <button class="button-ok" tabindex="1" data-translation="OK"></button>
+      </div></div>
+      <div id="confirm-popup" class="popup centered only-button-can-close" role="alertdialog" aria-describedby="confirm-popup-description"><div>
+        <p class="popup-description" id="confirm-popup-description"></p>
+        <button class="button-cancel" data-default-focus="true" tabindex="0" data-translation="Cancel"></button>
+        <button class="button-ok" tabindex="0" data-translation="OK"></button>
+      </div></div>
+      <div id="authentication-popup" class="popup centered only-button-can-close" role="dialog" aria-labelledby="authentication-popup-caption"><div>
+        <h2 class="popup-caption" id="authentication-popup-caption" data-translation="Log In"></h2>
+        <div class="popup-input"><label for="authentication-username" data-translation="Username"></label><input  data-default-focus="true" tabindex="0" id="authentication-username" maxlength="42"></div>
+        <div class="popup-input"><label for="authentication-password" data-translation="Password"></label><input type="password" tabindex="1" id="authentication-password" maxlength="42"></div>
+        <button class="button-ok" tabindex="2" data-translation="OK"></button>
+        <button class="button-cancel" tabindex="2" data-translation="Cancel"></button>
+      </div></div>
+      <div id="close-private-tab-popup" class="popup centered" role="dialog" aria-labelledby="close-private-tab-caption" aria-describedby="close-private-tab-description"><div>
+        <h2 class="popup-caption" id="close-private-tab-caption" data-translation="Close Private Tab?"></h2>
+        <p class="popup-description" id="close-private-tab-description" data-translation="You are leaving a Private tab. Do you want to close tab now?"></p>
+        <button class="button-ok popup-close-all" tabindex="0" data-translation="Close"></button>
+        <button class="button-cancel popup-close" data-default-focus="true" tabindex="0" data-translation="Leave open"></button>
+      </div></div>
+    </section>
+    <div class="notifications"></div>
+    <script type="text/javascript" src="i18n.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>
